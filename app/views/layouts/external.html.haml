@@ -1,0 +1,23 @@
+!!!
+%html
+  %head
+    %title Apollo
+    = stylesheet_link_tag 'external', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    .container
+      = link_to "Login", questions_path
+      - if user_signed_in?
+        Hello #{current_user.first_name},
+        \#{link_to "Sign Out", destroy_user_session_path, method: :delete}
+      - else
+        = link_to "Sign In", new_user_session_path
+      %hr/
+      = flash[:notice] || flash[:alert]
+      %hr/
+  #footer
+    .container
+      %p.text-muted
+        The Apollo project courtesy of 
+          %a{:href => "http://www.codecore.ca"} The Alumni

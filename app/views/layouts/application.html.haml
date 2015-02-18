@@ -1,0 +1,34 @@
+!!!
+%html
+  %head
+    %title Apollo
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    #wrap
+      %nav.navbar.navbar-inverse
+        .container
+          .pull-right
+            %ul.nav.navbar-nav
+              - if user_signed_in?
+                =#li{:style => "color: #fff, line-height: 10;"} Hey there #{current_user.first_name}
+                %li.greeting-1
+                  \ Hey there
+                  \#{current_user.first_name if current_user.first_name}
+                %li= link_to "Sign Out", sessions_path, method: :delete
+              - else
+                %li= link_to "Sign In", new_session_path
+                %li= link_to "Sign Up", new_user_path
+      .container   
+        - if flash[:notice]
+          .alert.alert-success= flash[:notice]
+        - elsif flash[:alert]
+          .alert.alert-danger= flash[:alert]
+        = yield
+    #footer
+      .container
+        .text-muted
+          %p
+            The Apollo project courtesy of 
+            %a{:href => "http://www.codecore.ca"} The Alumni

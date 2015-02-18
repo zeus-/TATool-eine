@@ -1,0 +1,24 @@
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$primary-color: #F5f5f5;
+
+.logo {
+  color: $primary-color;
+}
+
+.header {
+  background-color: $primary-color;
+  .subheader {
+    font-size: 10px;
+  }
+}
+
+
+// .header .subheader {
+//   font-size: 10px;
+// }
+
+// <div class="header">
+//   <div class="subheader">
+//   </div>
+// </div>
