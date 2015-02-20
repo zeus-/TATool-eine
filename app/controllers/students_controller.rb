@@ -1,13 +1,13 @@
-class UsersController < ApplicationController
+class StudentsController < ApplicationController
   def new
-    @user = User.new
+    @student = Student.new
     # render nothing: true
   end
 
   def create
-    @user = User.new user_params
-    if @user.save
-      session[:user_id] = @user.id
+    @student = Student.new student_params
+    if @student.save
+      session[:student_id] = @student.id
       redirect_to root_path, notice: "Account Created!"
     else
       flash[:alert] = "Account not created"
@@ -17,8 +17,8 @@ class UsersController < ApplicationController
 
   private
 
-  def user_params
-    params.require(:user).permit(:first_name, :last_name,
+  def student_params
+    params.require(:student).permit(:first_name, :last_name,
                                  :email, :password,
                                  :password_confirmation)
   end
