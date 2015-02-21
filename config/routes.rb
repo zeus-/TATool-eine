@@ -1,10 +1,18 @@
 Rails.application.routes.draw do
   
   resources :students, only: [:new, :create, :edit, :update]
+  resources :ta_users, only: [:new, :create, :edit, :update]
+  
   resources :sessions, only: [:new, :create] do
     delete :destroy, on: :collection
   end
-
+#  resources :ta_user_sessions, only: [:new, :create] do
+#    delete :destroy, on: :collection
+#  end
+  
+  get '/login_as_student' => 'sessions#new_student'
+  get '/login_as_ta' => 'sessions#new_ta_user'
+  resources :home, only: [:new] 
   root "students#new"
 
   # The priority is based upon order of creation: first created -> highest priority.

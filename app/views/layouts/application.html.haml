@@ -11,15 +11,20 @@
         .container
           .pull-right
             %ul.nav.navbar-nav
-              - if user_signed_in?
-                =#li{:style => "color: #fff, line-height: 10;"} Hey there #{current_user.first_name}
+              - if student_signed_in?
                 %li.greeting-1
-                  \ Hey there
+                  \ Hey there young padawn
+                  \#{current_user.first_name if current_user.first_name}
+                %li= link_to "Sign Out", sessions_path, method: :delete
+              -elsif ta_signed_in?
+                %li.greeting-1
+                  \ Hey there Jedi Master
                   \#{current_user.first_name if current_user.first_name}
                 %li= link_to "Sign Out", sessions_path, method: :delete
               - else
-                %li= link_to "Sign In", new_session_path
-                %li= link_to "Sign Up", new_student_path
+                %li= link_to "Student Login", login_as_student_path 
+                %li= link_to "Jedi Login ", login_as_ta_path 
+                %li= link_to "Sign Up", new_home_path
       .container   
         - if flash[:notice]
           .alert.alert-success= flash[:notice]
