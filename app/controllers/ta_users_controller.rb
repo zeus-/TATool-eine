@@ -14,6 +14,16 @@ class TaUsersController < ApplicationController
       render :new
     end
   end
+ 
+   def update
+    @ta = TaUser.find_by_id(params[:id])
+    if @ta.update( ta_user_params )
+      redirect_to ta_help_requests_path, notice: "Updated status!"
+    else
+      flash[:alert] = "Sorry something went wrong!"
+      redirect_to ta_help_requests_path
+    end
+   end
 
   private
 

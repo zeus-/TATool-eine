@@ -1,0 +1,11 @@
+-@available_tas.each do |ta|
+  %h2 Help Requests for #{ta.full_name}
+  -ta.help_requests.each do |hr|
+    %h5 #{hr.description}
+    %h6 Posted by: #{hr.student}
+  =simple_form_for [current_user, HelpRequest.new] do |f|
+    =f.input :description
+    =f.hidden_field :ta_user_id, :value => ta.id
+    =f.submit
+
+=#/ta/2/help-requests

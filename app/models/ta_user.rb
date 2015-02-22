@@ -1,5 +1,6 @@
 class TaUser < ActiveRecord::Base
   has_secure_password
+  has_many :help_requests, dependent: :nullify
 
   validates :email, presence: true, uniqueness: true,
             email_format: true

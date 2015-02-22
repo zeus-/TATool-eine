@@ -1,0 +1,3 @@
+= button_to "I am available", ta_user_path(id: @ta.id, ta_user: { is_available: true }), method: :patch, class: "btn btn-warning"
+-@hrs.each do |hr|
+  =hr.description 

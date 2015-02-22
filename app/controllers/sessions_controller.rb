@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
       redirect_to root_path, notice: "Logged in!"
     elsif @ta_user && @ta_user.authenticate(params[:ta_user][:password])
       session[:ta_user_id] = @ta_user.id
-      redirect_to root_path, notice: "Logged in!"
+      redirect_to ta_help_requests_path, notice: "Logged in!"
     elsif params[:student] 
       flash[:alert] = "Wrong email or password"
       render :new_student

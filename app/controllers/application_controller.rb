@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   def authenticate_student!
     unless student_signed_in?
-      redirect_to new_session_path, alert: "Please sign in young padawn"
+      redirect_to login_as_student_path, alert: "Please sign in young padawn"
     end
   end
 
@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
   
   def authenticate_ta!
     unless ta_signed_in?
-      redirect_to new_ta_user_session_path, alert: "Please sign in as a TA"
+      redirect_to login_as_ta_path, alert: "Please sign in as a TA"
     end
   end
 
