@@ -6,7 +6,8 @@ class TaHelpRequestsController < ApplicationController
   def index    
     @hrs = current_user.help_requests.all if current_user.help_requests
     @pending_hrs = @hrs.where("is_complete = false")
-    @ta = current_user
+    #@ta = current_user
+    render json: @pending_hrs
   end
   def update 
     if @help_request.update(help_request_params)

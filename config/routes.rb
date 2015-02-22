@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   
   get '/login_as_student' => 'sessions#new_student'
   get '/login_as_ta' => 'sessions#new_ta_user'
-  resources :home, only: [:new] 
+  resources :home, only: [:new, :index] 
   root "help_requests#index"
 
 

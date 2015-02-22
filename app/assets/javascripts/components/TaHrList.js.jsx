@@ -1,14 +1,18 @@
 var TaHrList = React.createClass({
 
   render: function() {
-    var hrListItems = [];
-    console.log(this.props.hrs)
+    var messageListItems = [];
+
     this.props.hrs.forEach(function(hr) {
-      hrListItems.push(<li>{hr.description}</li>);
+      messageListItems.push(<li>{hr.description}</li>);
     });
 
     return (
-      <ul>{hrListItems}</ul>
+      <ul>{messageListItems}</ul>
     );
   }
 });
+
+
+
+
