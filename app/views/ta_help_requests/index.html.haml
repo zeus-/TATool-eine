@@ -3,7 +3,9 @@
 -else
   = button_to "Go Online", ta_user_path(id: @ta.id, ta_user: { is_available: true }), method: :patch, class: "btn btn-info"
 
--@pending_hrs.each do |hr|
-  %h4 #{ hr.description }
-  %h5 Asked by #{ hr.student.full_name }
-  = button_to "Mark as done", ta_help_request_path(id: hr.id, help_request: { is_complete: true }), method: :patch, class: "btn btn-primary btn-sm"
+= react_component 'HRIndex', {hrs: @pending_hrs}
+=#
+=#-@pending_hrs.each do |hr|
+=#  %h4 #{ hr.description }
+=#  %h5 Asked by #{ hr.student.full_name }
+=#  = button_to "Mark as done", ta_help_request_path(id: hr.id, help_request: { is_complete: true }), method: :patch, class: "btn btn-primary btn-sm"
