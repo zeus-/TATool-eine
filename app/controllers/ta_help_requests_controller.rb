@@ -5,7 +5,16 @@ class TaHelpRequestsController < ApplicationController
   
   def index    
     @hrs = current_user.help_requests.all if current_user.help_requests
+    @pending_hrs = @hrs.where("is_complete = false")
     @ta = current_user
+  end
+  def update 
+    if @help_request.update(help_request_params)
+      redirect_to ta_help_requests_path, notice: " Done!"
+    else
+      flash.now[:alert] = "Cant update this HR"
+      render :index
+    end
   end
 
   def destroy
@@ -19,7 +28,7 @@ class TaHelpRequestsController < ApplicationController
  
   private
     def help_request_params
-      help_request_params = params.require(:help_request).permit(:description, :is_completed)
+      help_request_params = params.require(:help_request).permit(:description, :is_complete)
     end
     def find_hr
     @help_request = current_user.help_requests.find_by_id(params[:id])
