@@ -20,7 +20,7 @@ var TaHrIndexPage = React.createClass({
   render: function() {
     return (
       <div>
-        <h1>React component</h1>
+        <h1>Your Help Requests</h1>
 
         <TaHrList hrs={this.state.hrs} />
       </div>

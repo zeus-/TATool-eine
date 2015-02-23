@@ -11,7 +11,8 @@ class TaHelpRequestsController < ApplicationController
   end
   def update 
     if @help_request.update(help_request_params)
-      redirect_to ta_help_requests_path, notice: " Done!"
+      render nothing: true 
+      #redirect_to ta_help_requests_path, notice: " Done!"
     else
       flash.now[:alert] = "Cant update this HR"
       render :index
@@ -29,7 +30,7 @@ class TaHelpRequestsController < ApplicationController
  
   private
     def help_request_params
-      help_request_params = params.require(:help_request).permit(:description, :is_complete)
+      help_request_params = params.require(:help_request).permit(:description, :student_id, :is_complete)
     end
     def find_hr
     @help_request = current_user.help_requests.find_by_id(params[:id])

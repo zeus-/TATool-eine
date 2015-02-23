@@ -4,7 +4,7 @@ var TaHrList = React.createClass({
     var messageListItems = [];
 
     this.props.hrs.forEach(function(hr) {
-      messageListItems.push(<li>{hr.description}</li>);
+      messageListItems.push(<Hr key={hr.id} values={hr} />);
     });
 
     return (
