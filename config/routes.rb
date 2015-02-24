@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
   
+  
+  resources :ta_users, only: [:new, :create, :edit, :update] do
+    resources :help_requests
+  end 
+  
+  
   resources :ta_help_requests
   resources :students, only: [:new, :create, :edit, :update]do
     resources :help_requests
   end
-  resources :ta_users, only: [:new, :create, :edit, :update]
+
   
   resources :sessions, only: [:new, :create] do
     delete :destroy, on: :collection
@@ -13,6 +19,7 @@ Rails.application.routes.draw do
   get '/login_as_student' => 'sessions#new_student'
   get '/login_as_ta' => 'sessions#new_ta_user'
   resources :home, only: [:new, :index] 
+  get '/student_index' => 'home#student_index'
   root "help_requests#index"
 
 

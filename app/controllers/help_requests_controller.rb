@@ -5,6 +5,7 @@ class HelpRequestsController < ApplicationController
   before_action :find_available_tas
   
   def index    
+    #render json: @available_tas
   end
   
   def create    

@@ -9,6 +9,7 @@ class TaHelpRequestsController < ApplicationController
     #@ta = current_user
     render json: @pending_hrs
   end
+
   def update 
     if @help_request.update(help_request_params)
       render nothing: true 
