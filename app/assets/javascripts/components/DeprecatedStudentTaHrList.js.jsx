@@ -3,13 +3,21 @@ var StudentTaHrList = React.createClass({
     ta: React.PropTypes.object,
     helpRequests: React.PropTypes.arrayOf(React.PropTypes.object)
   },
-
+   
   render: function () {
+    var self = this;
     var firstName = this.props.ta.first_name;
     var lastName = this.props.ta.last_name;
     var title = "Help Requests for " + firstName + " " + lastName;
-
-    var helpRequests = this.props.helpRequests.map(function (hr) {
+   
+    var myHrs = [];
+    this.props.helpRequests.forEach(function(x) {
+      if (x.ta_user_id === self.props.ta.id) {
+        myHrs.push(x);
+      }
+      return myHrs
+    })
+    var helpRequests = myHrs.map(function (hr) {
       var student = hr.student;
       var firstName = student.first_name;
       var lastName = student.last_name;
@@ -25,8 +33,7 @@ var StudentTaHrList = React.createClass({
 
     return (
       <div>
-        <h2>{title}</h2>
-        {helpRequests}
+        <h6> {helpRequests} </h6>
       </div>
     );
   }

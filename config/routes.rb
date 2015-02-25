@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   get '/student_index' => 'home#student_index'
   root "help_requests#index"
 
+  resources :help_requests
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

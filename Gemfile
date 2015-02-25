@@ -24,6 +24,8 @@ gem 'will_paginate', '3.0.6'
 gem 'will_paginate-bootstrap'
 gem 'cancancan', '~> 1.10'
 
+gem 'active_model_serializers'
+
 gem 'react-rails', '~> 1.0.0.pre', github: 'reactjs/react-rails'
 
 group :test do

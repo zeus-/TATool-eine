@@ -1,5 +1,5 @@
 .row
-= react_component 'StudentHrIndexPage', {tas: @available_tas }
+  = react_component 'StudentHrIndexPage', {tas: @available_tas}
 =#react_component 'StudentHrs', {student_hrs: @hr_array.to_json }
 =#  -@available_tas.each do |ta|
 =#    .col-md-6

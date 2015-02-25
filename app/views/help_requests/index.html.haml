@@ -1,7 +1,8 @@
 .row
+  = react_component 'AvailableTas', { tas: @available_tas, hrs: HelpRequest.all.where("is_complete = false") }
   -@available_tas.each do |ta|
     .col-md-6
-      = react_component 'StudentTaHrList', { ta: ta, helpRequests: ta.help_requests.where("is_complete = false") }
+      =# react_component 'StudentTaHrList', { ta: ta, helpRequests: ta.help_requests.where("is_complete = false") }
       =simple_form_for [current_user, HelpRequest.new] do |f|
         =f.input :description
         =f.hidden_field :ta_user_id, :value => ta.id
