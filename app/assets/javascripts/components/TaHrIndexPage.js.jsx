@@ -7,8 +7,8 @@ var TaHrIndexPage = React.createClass({
 
   updateHrs: function() {
     var self = this;
-    $.get('/ta_help_requests.json', function(messages) {
-      self.setState({hrs: messages});
+    $.get('/ta_help_requests', function(data) {
+      self.setState({hrs: data.ta_help_requests});
     });
   },
 
