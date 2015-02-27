@@ -1,7 +1,7 @@
 var Hr = React.createClass({
   getInitialState: function() {
     return {
-      rating: this.props.values.is_complete
+      isComplete: this.props.values.is_complete
     }
   },
 
@@ -25,13 +25,18 @@ var Hr = React.createClass({
   },
 
   render: function() {
+    var gravatarAddy = "http://www.gravatar.com/avatar/"  
+    var studentMD5Email = md5(this.props.student_email)
+    var studentGravatarLink = gravatarAddy + studentMD5Email
+     
     return (
-        <div className="ta-hr">
-           <h4> {this.props.values.description }</h4>
-           <h5> Asked by StudentId: { this.props.values.student_full_name} </h5>
-           <button onClick={this.updateHrIsComplete}>
-           Mark as Done
-           </button>
+        <div className="ta-hr-section">
+          <img src= { studentGravatarLink } > </img>
+          <h4> {this.props.values.description }</h4>
+          <h5> Asked by Student: { this.props.values.student_full_name} </h5>
+          <button onClick={this.updateHrIsComplete}>
+          Mark as Done
+          </button>
         </div>
     )
   }

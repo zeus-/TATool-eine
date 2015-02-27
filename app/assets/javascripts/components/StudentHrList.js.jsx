@@ -23,12 +23,12 @@ var StudentHrList = React.createClass({
     this.props.tas.forEach(function(taObject) {
       var taMD5Email = md5(taObject.email)
       var taGravatarLink = gravatarAddy + taMD5Email
-      allItems.push(<img class="ta-avatar" src= { taGravatarLink } > </img>)
+      allItems.push(<img className="ta-avatar" src= { taGravatarLink } > </img>)
       allItems.push(<h1> Help Requests for  {taObject.full_name} </h1>)
       taObject.open_help_requests.forEach(function(studentHrs) {
         var studentMD5Email = md5(studentHrs.student_email)
         var studentGravatarLink = gravatarAddy + studentMD5Email
-        allItems.push(<img class="student-avatar"  src= { studentGravatarLink } > </img>)
+        allItems.push(<img className="student-avatar"  src= { studentGravatarLink } > </img>)
         allItems.push(<h5> {studentHrs.description} </h5>)
         allItems.push(<h6> -Asked by: {studentHrs.student_full_name} </h6>)
       })

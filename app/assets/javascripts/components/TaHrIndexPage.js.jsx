@@ -19,10 +19,14 @@ var TaHrIndexPage = React.createClass({
   },
 
   render: function() {
+    var gravatarAddy = "http://www.gravatar.com/avatar/"  
+    var taMD5Email = md5(this.props.ta.email)
+    var taGravatarLink = gravatarAddy + taMD5Email
+             
     return (
       <div>
-        <h1>Your Help Requests</h1>
-
+        <img className="ta-panel-avatar" src= { taGravatarLink } > </img>
+        <h1 className="ta-panel-h1">Hello {this.props.ta.first_name}</h1>
         <TaHrList hrs={this.state.hrs} />
       </div>
     );

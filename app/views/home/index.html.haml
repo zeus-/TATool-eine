@@ -3,5 +3,5 @@
 -else
   = button_to "Go Online", ta_user_path(id: @ta.id, ta_user: { is_available: true }), method: :patch, class: "btn btn-info"
 
-= react_component 'TaHrIndexPage', {hrs: @pending_hrs }
+= react_component 'TaHrIndexPage', {hrs: @pending_hrs, ta: @ta }
 
