@@ -15,6 +15,7 @@ var TaHrIndexPage = React.createClass({
   componentDidMount: function() {
     var self = this;
     setInterval(function() { self.updateHrs() }, 2000);
+    self.updateHrs();
   },
 
   render: function() {

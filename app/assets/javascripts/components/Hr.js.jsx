@@ -28,7 +28,7 @@ var Hr = React.createClass({
     return (
         <div className="ta-hr">
            <h4> {this.props.values.description }</h4>
-           <h5> Asked by StudentId: { this.props.values.student_id} </h5>
+           <h5> Asked by StudentId: { this.props.values.student_full_name} </h5>
            <button onClick={this.updateHrIsComplete}>
            Mark as Done
            </button>

@@ -12,8 +12,7 @@ var NewHrForm = React.createClass({
 
   addNewHr: function(e) {
     e.preventDefault();
-    $.post('/help_requests', {help_request: {description: this.state.text, ta_user_id: this.props.ta}},
-      this.props.onNewHr);
+    $.post('/help_requests', {help_request: {description: this.state.text, ta_user_id: this.props.ta}}, this.props.onNewHr);
     this.setState({text: ''});
   },
 
