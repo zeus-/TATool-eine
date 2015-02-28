@@ -8,7 +8,7 @@ class TaUsersController < ApplicationController
     @ta_user = TaUser.new ta_user_params
     if @ta_user.save
       session[:ta_user_id] = @ta_user.id
-      redirect_to root_path, notice: "Account Created!"
+      redirect_to home_index_path, notice: "Account Created!"
     else
       flash[:alert] = "Account not created"
       render :new
@@ -18,10 +18,10 @@ class TaUsersController < ApplicationController
    def update
     @ta = TaUser.find_by_id(params[:id])
     if @ta.update( ta_user_params )
-      redirect_to ta_help_requests_path, notice: "Updated status!"
+      redirect_to home_index_path, notice: "Updated status!"
     else
       flash[:alert] = "Sorry something went wrong!"
-      redirect_to ta_help_requests_path
+      redirect_to home_index_path
     end
    end
 

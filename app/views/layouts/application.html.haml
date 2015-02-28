@@ -20,7 +20,7 @@
                 %li.greeting-1
                   \ Hey there Jedi Master
                   \#{current_user.first_name if current_user.first_name}
-                %li= link_to "Sign Out", sessions_path, method: :delete
+                %li= link_to "Sign Out", destroy_ta_sessions_path, method: :delete
               - else
                 %li= link_to "Student Login", login_as_student_path 
                 %li= link_to "Jedi Login ", login_as_ta_path 

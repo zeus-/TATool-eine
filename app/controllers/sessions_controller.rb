@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
       redirect_to root_path, notice: "Logged in!"
     elsif @ta_user && @ta_user.authenticate(params[:ta_user][:password])
       session[:ta_user_id] = @ta_user.id
-      redirect_to ta_help_requests_path, notice: "Logged in!"
+      redirect_to home_index_path, notice: "Logged in!"
     elsif params[:student] 
       flash[:alert] = "Wrong email or password"
       render :new_student
@@ -28,10 +28,12 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:ta_user_id] = nil
     session[:student_id] = nil
     redirect_to root_path, notice: "Logged out!"
   end
 
-
+  def destroy_ta
+    session[:ta_user_id] = nil
+    redirect_to login_as_ta_path, notice: "Logged out!"
+  end 
 end

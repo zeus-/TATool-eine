@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   
   
   resources :ta_help_requests
+  get '/complete_requests' => 'ta_help_requests#complete_requests'
   resources :students, only: [:new, :create, :edit, :update]do
     resources :help_requests
   end
@@ -14,13 +15,14 @@ Rails.application.routes.draw do
   
   resources :sessions, only: [:new, :create] do
     delete :destroy, on: :collection
+    delete :destroy_ta, on: :collection
   end
   
   get '/login_as_student' => 'sessions#new_student'
   get '/login_as_ta' => 'sessions#new_ta_user'
   resources :home, only: [:new, :index] 
   get '/student_index' => 'home#student_index'
-  root "help_requests#index"
+  root "home#student_index"
 
   resources :help_requests
 

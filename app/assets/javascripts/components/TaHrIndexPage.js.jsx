@@ -1,7 +1,8 @@
 var TaHrIndexPage = React.createClass({
   getInitialState: function() {
     return {
-      hrs: this.props.hrs
+      hrs: [],
+      completeHrs: []
     }
   },
 
@@ -11,11 +12,21 @@ var TaHrIndexPage = React.createClass({
       self.setState({hrs: data.ta_help_requests});
     });
   },
+  updateCompleteHrs: function() {
+    var self = this;
+    $.get('/complete_requests', function(data) {
+      self.setState({completeHrs: data.ta_help_requests});
+    });
+  },
 
   componentDidMount: function() {
     var self = this;
-    setInterval(function() { self.updateHrs() }, 2000);
+    setInterval(function() { 
+      self.updateHrs();
+      self.updateCompleteHrs();
+    }, 2000);
     self.updateHrs();
+    self.updateCompleteHrs();
   },
 
   render: function() {
@@ -27,7 +38,7 @@ var TaHrIndexPage = React.createClass({
       <div>
         <img className="ta-panel-avatar" src= { taGravatarLink } > </img>
         <h1 className="ta-panel-h1">Hello {this.props.ta.first_name}</h1>
-        <TaHrList hrs={this.state.hrs} />
+        <TaHrList hrs={this.state.hrs} completeHrs={this.state.completeHrs} />
       </div>
     );
   }

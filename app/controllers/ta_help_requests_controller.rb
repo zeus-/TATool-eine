@@ -9,7 +9,12 @@ class TaHelpRequestsController < ApplicationController
     #@ta = current_user
     render json: @pending_hrs
   end
-
+  def complete_requests
+    @hrs = current_user.help_requests.all if current_user.help_requests
+    @incomplete_hrs = @hrs.where("is_complete = true").order("created_at DESC").limit(5)
+    #@ta = current_user
+    render json: @incomplete_hrs
+  end
   def update 
     if @help_request.update(help_request_params)
       render nothing: true 
