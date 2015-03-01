@@ -25,7 +25,7 @@ var StudentHrIndexPage = React.createClass({
   render: function() {
     return (
       <div>
-        <h1>Available Tas with pending help requests</h1>
+        <h1 className="student-index-title">&nbsp;Available Teaching Assistants for {(new Date()).toString().split(' ').splice(1,3).join(' ') }</h1>
         <StudentHrList tas= {this.state.tas} forceUpdate={this.updateAnything}  />
       </div>
     );

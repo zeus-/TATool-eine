@@ -25,8 +25,8 @@ gem 'will_paginate-bootstrap'
 gem 'cancancan', '~> 1.10'
 
 gem 'active_model_serializers'
-
 gem 'react-rails', '~> 1.0.0.pre', github: 'reactjs/react-rails'
+gem 'font-awesome-sass'
 
 group :test do
   gem 'simplecov', require: false

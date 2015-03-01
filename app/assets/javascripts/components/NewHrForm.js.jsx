@@ -18,13 +18,14 @@ var NewHrForm = React.createClass({
 
   render: function() {
     return (
-      <div>
+      <div className="form" >
         <form onSubmit={this.addNewHr}>
-          <input type="text"
+          <input type="text" placeholder="What woud you like help with?"
                  ref="newHr"
                  value={this.state.text}
                  onChange={this.updateNewHrValue} />
-          <button>Submit Help Request</button>
+                 <br> </br>
+          <button> Submit Help Request</button>
         </form>
       </div>
     );

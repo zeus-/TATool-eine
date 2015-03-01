@@ -7,8 +7,7 @@ var TaHrList = React.createClass({
     });
     var completedHrs = [];
     this.props.completeHrs.forEach(function(hr) {
-       completedHrs.push(<h4> {hr.description } </h4>); 
-       completedHrs.push(<p> -Asked by: {hr.student_full_name } </p>); 
+      completedHrs.push(<CompletedHr key={hr.id} values={hr} />);
     });
     
     return (

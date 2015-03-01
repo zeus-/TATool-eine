@@ -3,8 +3,10 @@
 $brand-primary: #000;
 $border-radius-base: 0px;
 $font-family-sans-serif: "Raleway";
-
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
 html,
 body {
   height: 100%;
@@ -14,9 +16,6 @@ body {
 .row {
   margin-left:0px;
   margin-right:0px;
-}
-.split {
- background: #fff;
 }
 
 /* Wrapper for page content to push down footer */
@@ -43,3 +42,120 @@ body {
   line-height: 52.7px;
 }
 
+/* Tatool-eine styles */
+
+#wrap {
+ color: #b2b2b2;
+ background: #333333;
+}
+
+.student-index-title {
+ margin-top: -1px;
+ color: #3480c7;
+ font-size: 3em;
+ letter-spacing: 2px;
+ text-transform: uppercase;
+ font-family: "Optima"
+}
+.top {
+  margin-top: 15px;
+}
+.student-header {
+  position: relative;
+  padding-left: 0px;
+  padding-bottom: 50px;
+  border-bottom: 3px solid #aaa;
+  img {
+    position: absolute;
+    width: 145px;
+    top: 7px;
+    left: 387px;
+  }
+ 
+  h2, h3 {
+    padding: 0px;
+    margin: 0;
+  }
+
+  h2 {
+    padding-top: 5px;
+    font-size: 32px;
+    padding-bottom: 20px;
+
+    a {
+      color: rgba(0,0,0,0.95);
+      text-decoration: none;
+
+      &:hover {
+        color: rgba(0,0,0,0.5);
+      }
+    }
+  }
+
+  .form {
+    ::-webkit-input-placeholder {
+       color: #5384b2;
+       font-style: italic;
+    }
+    input {
+      width: 270px;
+        }
+    button {
+      display: inline-block;
+      background: #29669F;
+      margin-top: 10px;
+      border: 1px solid #29669F;
+      padding-left: 2px;
+      color: #fff;
+    }
+    padding-left: 0px;
+    color: black;
+  }
+  h3 {
+    font-size: 14px;
+    color: #888;
+  }
+}
+.student-hr-content {
+  position: relative;
+  margin-top: 35px;
+  padding-bottom: 90px;
+  border-bottom: 1px dashed #aaa;
+  img {
+    position: absolute;
+    /* width: 0px; */
+    top: -5px;
+    left:0px;
+  }
+ 
+  p {
+    padding-top: 0px;
+    font-size: 16px;
+    position: absolute;
+    left: 100px;
+  }
+  
+  h5 {
+    padding-top: 20px;
+    position: absolute;
+    left: 100px;
+  }
+
+  button { 
+    position: absolute;
+    top: -5px;
+    right: 0px;
+    background: #333333;
+    border: 0px;
+    color: #aaa;
+   }
+   .edit { 
+    position: absolute;
+    top: -3px;
+    right: 25px;
+    background: #333333;
+    border: 0px;
+    color: #aaa;
+   }
+
+ }
