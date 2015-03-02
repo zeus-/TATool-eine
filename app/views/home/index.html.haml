@@ -1,7 +1,7 @@
--if @ta.is_available? 
-  = button_to "Go Offline", ta_user_path(id: @ta.id, ta_user: { is_available: false }), method: :patch, class: "btn btn-danger"
--else
-  = button_to "Go Online", ta_user_path(id: @ta.id, ta_user: { is_available: true }), method: :patch, class: "btn btn-info"
-
+=#-if @ta.is_available? 
+=#  = button_to "Go Offline", ta_user_path(id: @ta.id, ta_user: { is_available: false }), method: :patch, class: "btn btn-danger online"
+=#-else
+=#  = button_to "Go Online", ta_user_path(id: @ta.id, ta_user: { is_available: true }), method: :patch, class: "btn btn-info online"
+=#
 = react_component 'TaHrIndexPage', {hrs: @pending_hrs, ta: @ta }
 

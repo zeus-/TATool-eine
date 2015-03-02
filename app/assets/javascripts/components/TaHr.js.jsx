@@ -31,12 +31,13 @@ var Hr = React.createClass({
     var completedList = [];
 
     return (
-        <div className="ta-hr-section">
+        <div className="ta-hr-content">
           <img src= { studentGravatarLink } > </img>
-          <h4> {this.props.values.description }</h4>
+          <p> Student needs help with {this.props.values.description }</p>
           <h5> Asked by Student: { this.props.values.student_full_name} </h5>
-          <button onClick={this.updateHrIsComplete}>
-          Mark as Done
+          <button className="checkbox"  onClick={this.updateHrIsComplete}>
+          <i className="fa fa-check-square-o fa-3x"></i>
+          <h6 className="done"> Mark as <br> </br>Complete </h6>
           </button>
         
         </div>

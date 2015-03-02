@@ -28,11 +28,11 @@ var CompletedHr = React.createClass({
     var completedList = [];
 
     return (
-        <div className="ta-hr-completed-section">
+        <div className="ta-completed-hr-content col-xs-6">
           <img src= { studentGravatarLink } > </img>
-          <h4> {this.props.values.description }</h4>
-          <h5> Asked by Student: { this.props.values.student_full_name} </h5>
-          <button onClick={this.undoHrCompleteStatus}>
+          <p> You helped { this.props.values.student_full_name}   
+          <br> </br> with {this.props.values.description + " " } today. </p>
+          <button className="undo-button" onClick={this.undoHrCompleteStatus}>
           Undo
           </button>
         

@@ -11,7 +11,7 @@ class TaHelpRequestsController < ApplicationController
   end
   def complete_requests
     @hrs = current_user.help_requests.all if current_user.help_requests
-    @incomplete_hrs = @hrs.where("is_complete = true").order("created_at DESC").limit(5)
+    @incomplete_hrs = @hrs.where("is_complete = true").order("created_at DESC").limit(6)
     #@ta = current_user
     render json: @incomplete_hrs
   end

@@ -18,7 +18,7 @@ class TaUsersController < ApplicationController
    def update
     @ta = TaUser.find_by_id(params[:id])
     if @ta.update( ta_user_params )
-      redirect_to home_index_path, notice: "Updated status!"
+       render nothing: true 
     else
       flash[:alert] = "Sorry something went wrong!"
       redirect_to home_index_path

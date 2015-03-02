@@ -9,22 +9,30 @@
     #wrap
       %nav.navbar.navbar-inverse
         .container
+          %button.navbar-toggle.collapsed{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "c\r\n ollapse", :type => "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand{:href => "#"} 
+            =image_tag("logo.jpg") 
           .pull-right
-            %ul.nav.navbar-nav
-              - if student_signed_in?
-                %li.greeting-1
-                  \ Hey there young padawn
-                  \#{current_user.first_name if current_user.first_name}
-                %li= link_to "Sign Out", sessions_path, method: :delete
-              -elsif ta_signed_in?
-                %li.greeting-1
-                  \ Hey there Jedi Master
-                  \#{current_user.first_name if current_user.first_name}
-                %li= link_to "Sign Out", destroy_ta_sessions_path, method: :delete
-              - else
-                %li= link_to "Student Login", login_as_student_path 
-                %li= link_to "Jedi Login ", login_as_ta_path 
-                %li= link_to "Sign Up", new_home_path
+            .collapse.navbar-collapse{:id => "bs-example-navbar-collapse-1\r\n"}
+              %ul.nav.navbar-nav
+                - if student_signed_in?
+                  %li.greeting-1
+                    \ Hello apprentice
+                    \#{current_user.first_name if current_user.first_name}
+                  %li= link_to "Sign Out", sessions_path, method: :delete
+                -elsif ta_signed_in?
+                  %li.greeting-1
+                    \ Hey there Jedi Master
+                    \#{current_user.first_name if current_user.first_name}
+                  %li= link_to "Sign Out", destroy_ta_sessions_path, method: :delete
+                - else
+                  %li= link_to "Student Login", login_as_student_path 
+                  %li= link_to "Jedi Login ", login_as_ta_path 
+                  %li= link_to "Sign Up", new_home_path
       .container   
         - if flash[:notice]
           .alert.alert-success= flash[:notice]
