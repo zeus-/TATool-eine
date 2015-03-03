@@ -30,7 +30,7 @@ var CompletedHr = React.createClass({
     return (
         <div className="ta-completed-hr-content col-xs-6">
           <img src= { studentGravatarLink } > </img>
-          <p> You helped { this.props.values.student_full_name}   
+          <p> You helped { this.props.values.student_first_name}   
           <br> </br> with {this.props.values.description + " " } today. </p>
           <button className="undo-button" onClick={this.undoHrCompleteStatus}>
           Undo

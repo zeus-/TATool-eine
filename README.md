@@ -1,5 +1,6 @@
-# Demo Day Application
+# Demo Day Application TATool-eine
 
 This is the demo day application for
-[* CodeCore Bootcamp, Cohort Baby Numer 2*](http://codecore.ca/)
-by [zeus-](http://wikipedia.com/zeus/).
+[* CodeCore Bootcamp, January 2015 Cohort*](http://codecore.ca/).
+
+-This app helps connect students and T.A.’s in real time by fetching and updating pending help requests between all online users. Student can ask questions and T.A’s can answer them in real time.

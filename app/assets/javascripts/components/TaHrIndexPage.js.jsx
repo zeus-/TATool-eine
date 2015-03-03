@@ -3,7 +3,7 @@ var TaHrIndexPage = React.createClass({
     return {
       hrs: [],
       completeHrs: [],
-      taOnline: this.props.ta.is_available
+      is_available: this.props.ta.is_available
     }
   },
 
@@ -29,6 +29,7 @@ var TaHrIndexPage = React.createClass({
       type: 'PATCH',
       data: {ta_user: {is_available: false}},
       success: function() {
+        thisComponent.setState({is_available: false});
       },
       error: function() {
         alert('Could not save!')
@@ -45,6 +46,7 @@ var TaHrIndexPage = React.createClass({
       type: 'PATCH',
       data: {ta_user: {is_available: true}},
       success: function() {
+        thisComponent.setState({is_available: true});
       },
       error: function() {
         alert('Could not save!')
@@ -66,7 +68,7 @@ var TaHrIndexPage = React.createClass({
     var gravatarAddy = "http://www.gravatar.com/avatar/"  
     var taMD5Email = md5(this.props.ta.email)
     var taGravatarLink = gravatarAddy + taMD5Email
-    var isAvailable = this.state.taOnline
+    var isAvailable = this.state.is_available
     var loginButton;
     if (isAvailable ) {
       loginButton = <button className="offline" onClick={this.goOffline}> Go Offline </button>;

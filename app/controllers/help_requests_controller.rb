@@ -23,7 +23,8 @@ class HelpRequestsController < ApplicationController
  
   def destroy
     if @help_request.student && @help_request.destroy 
-      redirect_to request.referer, notice: "Deleted HR"
+      render nothing: true 
+      #redirect_to request.referer, notice: "Deleted HR"
     else
       flash.now[:alert] = "Cant delete this HR"
       render :index
