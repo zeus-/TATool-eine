@@ -3,20 +3,18 @@ class TaHelpRequestsController < ApplicationController
   before_action :authenticate_ta!
   before_action :find_hr, only: [:edit, :update, :destroy]
   
-  def index    
-    @hrs = current_user.help_requests.all if current_user.help_requests
-    @pending_hrs = @hrs.where("is_complete = false")
+  def index
+    @pending_hrs = current_user.help_requests.where(is_complete: false)
     #@ta = current_user
     render json: @pending_hrs
   end
   def complete_requests
-    @hrs = current_user.help_requests.all if current_user.help_requests
-    @incomplete_hrs = @hrs.where("is_complete = true").order("created_at DESC").limit(6)
+    @complete_hrs = current_user.help_requests.where(is_complete: true).order("created_at DESC").limit(6)
     #@ta = current_user
-    render json: @incomplete_hrs
+    render json: @complete_hrs
   end
   def update 
-    if @help_request.update(help_request_params)
+    if @help_request.ta_user && @help_request.update(help_request_params)
       render nothing: true 
       #redirect_to ta_help_requests_path, notice: " Done!"
     else
@@ -26,7 +24,7 @@ class TaHelpRequestsController < ApplicationController
   end
 
   def destroy
-    if @help_request.destroy 
+    if @help_request.ta_user && @help_request.destroy 
       redirect_to ta_help_requests_path, notice: "Deleted HR"
     else
       flash.now[:alert] = "Cant delete this HR"

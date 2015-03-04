@@ -251,7 +251,7 @@ body {
     background: #333333;
     border: 0px;
     color: #aaa;
-    
+    font-style: italic; 
     .done { 
       margin-top: 5px;
       font-size: 15px;
@@ -263,7 +263,6 @@ body {
    .undo-button:hover {
         color: rgba(242,67,67,1);
       }
- 
  }
 
 

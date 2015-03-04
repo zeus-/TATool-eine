@@ -7,8 +7,7 @@ class HomeController < ApplicationController
   end
 
   def index
-   @hrs = current_user.help_requests.all if current_user.help_requests
-   @pending_hrs = @hrs.where("is_complete = false")
+   @pending_hrs = current_user.help_requests.where("is_complete = false")
    @ta = current_user
   end
   

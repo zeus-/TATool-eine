@@ -1,7 +1,6 @@
 class StudentsController < ApplicationController
   def new
     @student = Student.new
-    # render nothing: true
   end
 
   def create

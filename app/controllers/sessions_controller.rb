@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   end
 
   def new_ta_user
-    TaUser.new  
+    @ta_user = TaUser.new  
   end
 
   def create

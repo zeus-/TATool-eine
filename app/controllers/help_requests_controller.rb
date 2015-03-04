@@ -1,7 +1,7 @@
 class HelpRequestsController < ApplicationController
   
   before_action :authenticate_student!
-  before_action :find_hr, only: [:edit, :update, :destroy]
+  before_action :find_hr, only: [:update, :destroy]
   before_action :find_available_tas
   
   def index    
@@ -13,7 +13,8 @@ class HelpRequestsController < ApplicationController
     @hr = HelpRequest.new(help_request_params)
     @hr.student = current_user
     if @hr.save
-      redirect_to request.referer, notice: "Your HR was created successfully"
+      render nothing: true 
+      #redirect_to request.referer, notice: "Your HR was created successfully"
     else
       flash.now[:alert] = "What is your help request??"
       @available_tas = TaUser.where("is_available = true")
@@ -21,6 +22,15 @@ class HelpRequestsController < ApplicationController
     end
   end
  
+  def update
+    if @help_request.student && @help_request.update(help_request_params)
+      render nothing: true
+    else
+      flash.now[:alert] = "Cant update this HR"
+      render :index
+    end
+  end
+
   def destroy
     if @help_request.student && @help_request.destroy 
       render nothing: true 

@@ -1,7 +1,6 @@
 class TaUsersController < ApplicationController
   def new
     @ta_user = TaUser.new
-    # render nothing: true
   end
 
   def create
