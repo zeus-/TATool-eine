@@ -269,13 +269,15 @@ body {
 .ta-panel {
   margin-left: 7px;
   position: relative;
-  padding-left: 0px;
+  padding-top: 5px;
+  padding-left: 5px;
   padding-bottom: 47px;
-  border-bottom: 4px solid #aaa;
+  border: 2px solid #aaa;
+  background: url("http://impiousdigest.com/wp-content/uploads/simple-one-color-grey-background-1920x12002.jpg");
   .ta-panel-avatar {
     position: absolute;
     width: 145px;
-    top: 1px;
+    top: 10px;
     right: 5px;
   }
  

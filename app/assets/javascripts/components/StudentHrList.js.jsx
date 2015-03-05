@@ -24,16 +24,16 @@ var StudentHrList = React.createClass({
     var allItems = [];
     var self = this;
     var gravatarAddy = "http://www.gravatar.com/avatar/"  
-    this.props.tas.forEach(function(taObject) {
+    this.props.tas.forEach(function(taObject, i) {
       var taMD5Email = md5(taObject.email)
       var taGravatarLink = gravatarAddy + taMD5Email
       var helpRequests = [];
       // Add all help requests to array
-      taObject.open_help_requests.forEach(function(studentHrs) {
+      taObject.open_help_requests.forEach(function(studentHrs, number) {
         var studentMD5Email = md5(studentHrs.student_email)
         var studentGravatarLink = gravatarAddy + studentMD5Email
         helpRequests.push(
-          <div className="student-hr">
+          <div key={number} className="student-hr">
             <div className="student-hr-content">
               <img src={studentGravatarLink} />
               <p> I need help with {studentHrs.description} </p>
@@ -51,7 +51,7 @@ var StudentHrList = React.createClass({
       })
       
       allItems.push(
-        <div className="col-sm-6 top">
+        <div key= { i } className="col-sm-6 top">
           <div className= "student-header"> 
             <img src= { taGravatarLink } > </img>
             <h2> Help Requests for  {taObject.first_name} </h2>

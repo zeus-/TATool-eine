@@ -35,7 +35,7 @@ var Hr = React.createClass({
           <img src= { studentGravatarLink } > </img>
           <p> Student needs help with {this.props.values.description }</p>
           <h5> Asked by Student: { this.props.values.student_full_name} </h5>
-          <button className="checkbox"  onClick={this.updateHrIsComplete}>
+          <button className="checkbox" id="checkbox" onClick={this.updateHrIsComplete}>
           <i className="fa fa-check-square-o fa-3x"></i>
           <h6 className="done"> Mark as <br> </br>Complete </h6>
           </button>
