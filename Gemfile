@@ -30,6 +30,7 @@ gem 'font-awesome-sass'
 
 group :test do
   gem 'simplecov', require: false
+  gem 'database_cleaner'
 end
 
 group :development do

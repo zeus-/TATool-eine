@@ -38,7 +38,7 @@ var StudentHrList = React.createClass({
               <img src={studentGravatarLink} />
               <p> I need help with {studentHrs.description} </p>
               <h5> -Asked by: {studentHrs.student_full_name} </h5>
-              <button onClick= {self.deleteHr.bind(self, studentHrs)} >
+              <button id="trash" onClick= {self.deleteHr.bind(self, studentHrs)} >
                 <i className="fa fa-trash fa-lg"></i> 
               </button>
               <span className="edit">

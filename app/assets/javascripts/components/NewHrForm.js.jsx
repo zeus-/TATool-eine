@@ -21,6 +21,7 @@ var NewHrForm = React.createClass({
       <div className="form" >
         <form onSubmit={this.addNewHr}>
           <input type="text" placeholder="What woud you like help with?"
+                 id="description"
                  ref="newHr"
                  value={this.state.text}
                  onChange={this.updateNewHrValue} />
