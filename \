@@ -88,7 +88,7 @@ body {
   h2 {
     padding-top: 5px;
     font-size: 32px;
-    padding-bottom: 9px;
+    padding-bottom: 13px;
 
     a {
       color: rgba(0,0,0,0.95);
@@ -108,20 +108,20 @@ body {
     }
     input {
       width: 290px;
-      height: 29px;
-      font-size: 14px;
+      height: 30px;
+      font-size: 16px;
       color: #4C6D8B;
-      border: 3px solid #29669F;
+      border: 2px solid #5498d8;
         }
     button {
       display: inline-block;
       background: #29669F;
-      margin-top: 9px;
+      margin-top: 10px;
       border: 1px solid #29669F;
       padding-left: 3px;
       color: #fff;
-      font-size: 14px;
-      height: 26px;
+      font-size: 15px;
+      height: 27px;
     }
     padding-left: 0px;
     color: black;
@@ -183,15 +183,10 @@ body {
    }
 
  }
-.all-ta-content {
-  border: 2px solid #aaa;
-  padding-bottom: 300px;
- }
 .ta-hr-content {
   position: relative;
   margin-top: 35px;
-  margin-left: -24px;
-  margin-right: 12px;
+  margin-left: -30px;
   padding-bottom: 96px;
   border-bottom: 1px dashed #aaa;
   img {
@@ -199,21 +194,19 @@ body {
     /* width: 0px; */
     top: -5px;
     left:0px;
-    border: 1px solid #aaa;
   }
  
   p {
     padding-top: 0px;
+    font-size: 16px;
     position: absolute;
     left: 100px;
-    font-size: 18.5px;
   }
   
   h5 {
     padding-top: 20px;
     position: absolute;
     left: 100px;
-    font-size: 15px;
   }
 
   .checkbox { 
@@ -291,36 +284,32 @@ body {
 
 
 .ta-panel {
-  margin-left: 0px;
+  margin-left: 7px;
   position: relative;
   padding-top: 5px;
-  //padding-left: 7px;
+  padding-left: 5px;
   padding-bottom: 47px;
-  //border: 1px solid #aaa;
-  border-bottom: 2px solid #aaa;
+  border: 1px solid #aaa;
   background: url("http://impiousdigest.com/wp-content/uploads/simple-one-color-grey-background-1920x12002.jpg");
   .ta-panel-avatar {
     position: absolute;
     width: 145px;
-    top: 16px;
-    right: 11px;
-    border: 2px solid #aaa;
+    top: 10px;
+    right: 5px;
   }
  
   h1 {
     color: #3480c7;
     font-size: 2.9em;
     letter-spacing: 2px;
-    margin-top: 5px;
+    margin-top: -1px;
     padding-bottom: 5px;
-    margin-left: 14px;
   }
   h2 {
    font-size: 2em;
    color: #5c99d2;
-   margin-top: -12px;
+   margin-top: -18px;
    padding-bottom: 0px;
-   margin-left: 14px;
   }
   .online {
     width: 160px;
@@ -328,7 +317,7 @@ body {
     background-color: rgba(24,238,38,0.8);
     font-size: 1.2em;
     color: #fff;
-    margin-left: 14px;
+    border: 0px;
   } 
   .offline {
     width: 160px;
@@ -336,7 +325,7 @@ body {
     background-color: rgba(242,67,67,1);
     color: #fff;
     font-size: 1.2em;
-    margin-left: 14px;
+    border: 0px;
   }
 
 }

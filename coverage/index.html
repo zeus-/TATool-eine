@@ -14,7 +14,7 @@
       <img src="./assets/0.9.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-03-04T20:31:10-08:00">2015-03-04T20:31:10-08:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-03-05T16:14:12-08:00">2015-03-05T16:14:12-08:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,7 +25,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         8.05
+         8.0
        </span>
     </span> hits/line)
   </h2>
@@ -57,7 +57,7 @@
         <td>17</td>
         <td>17</td>
         <td>0</td>
-        <td>119.6</td>
+        <td>118.6</td>
       </tr>
       
       <tr>
@@ -107,7 +107,7 @@
         <td>25</td>
         <td>19</td>
         <td>6</td>
-        <td>7.8</td>
+        <td>7.7</td>
       </tr>
       
       <tr>
@@ -137,7 +137,7 @@
         <td>8</td>
         <td>8</td>
         <td>0</td>
-        <td>35.6</td>
+        <td>35.1</td>
       </tr>
       
       <tr>
@@ -157,7 +157,7 @@
         <td>10</td>
         <td>10</td>
         <td>0</td>
-        <td>43.8</td>
+        <td>43.0</td>
       </tr>
       
       <tr>
@@ -412,8 +412,8 @@
           <code class="ruby">  def student_signed_in?</code>
         </li>
       
-        <li class="covered" data-hits="693" data-linenumber="13">
-          <span class="hits">693</span>
+        <li class="covered" data-hits="689" data-linenumber="13">
+          <span class="hits">689</span>
           
           <code class="ruby">    session[:student_id].present?</code>
         </li>
@@ -442,8 +442,8 @@
           <code class="ruby">  def current_user</code>
         </li>
       
-        <li class="covered" data-hits="504" data-linenumber="18">
-          <span class="hits">504</span>
+        <li class="covered" data-hits="500" data-linenumber="18">
+          <span class="hits">500</span>
           
           <code class="ruby">    (@current_student ||= Student.find session[:student_id] if student_signed_in?) || (@current_ta ||= TaUser.find session[:ta_user_id] if ta_signed_in?)</code>
         </li>
@@ -490,8 +490,8 @@
           <code class="ruby">  def authenticate_ta!</code>
         </li>
       
-        <li class="covered" data-hits="140" data-linenumber="26">
-          <span class="hits">140</span>
+        <li class="covered" data-hits="138" data-linenumber="26">
+          <span class="hits">138</span>
           
           <code class="ruby">    unless ta_signed_in?</code>
         </li>
@@ -526,8 +526,8 @@
           <code class="ruby"> def ta_signed_in?</code>
         </li>
       
-        <li class="covered" data-hits="599" data-linenumber="32">
-          <span class="hits">599</span>
+        <li class="covered" data-hits="593" data-linenumber="32">
+          <span class="hits">593</span>
           
           <code class="ruby">   session[:ta_user_id].present?</code>
         </li>
@@ -1546,8 +1546,8 @@
           <code class="ruby">  def index</code>
         </li>
       
-        <li class="covered" data-hits="44" data-linenumber="7">
-          <span class="hits">44</span>
+        <li class="covered" data-hits="43" data-linenumber="7">
+          <span class="hits">43</span>
           
           <code class="ruby">    @pending_hrs = current_user.help_requests.where(is_complete: false)</code>
         </li>
@@ -1558,8 +1558,8 @@
           <code class="ruby">    #@ta = current_user</code>
         </li>
       
-        <li class="covered" data-hits="44" data-linenumber="9">
-          <span class="hits">44</span>
+        <li class="covered" data-hits="43" data-linenumber="9">
+          <span class="hits">43</span>
           
           <code class="ruby">    render json: @pending_hrs</code>
         </li>
@@ -1576,8 +1576,8 @@
           <code class="ruby">  def complete_requests</code>
         </li>
       
-        <li class="covered" data-hits="44" data-linenumber="12">
-          <span class="hits">44</span>
+        <li class="covered" data-hits="43" data-linenumber="12">
+          <span class="hits">43</span>
           
           <code class="ruby">    @complete_hrs = current_user.help_requests.where(is_complete: true).order(&quot;created_at DESC&quot;).limit(6)</code>
         </li>
@@ -1588,8 +1588,8 @@
           <code class="ruby">    #@ta = current_user</code>
         </li>
       
-        <li class="covered" data-hits="44" data-linenumber="14">
-          <span class="hits">44</span>
+        <li class="covered" data-hits="43" data-linenumber="14">
+          <span class="hits">43</span>
           
           <code class="ruby">    render json: @complete_hrs</code>
         </li>
@@ -2134,14 +2134,14 @@
           <code class="ruby">  def full_name</code>
         </li>
       
-        <li class="covered" data-hits="140" data-linenumber="9">
-          <span class="hits">140</span>
+        <li class="covered" data-hits="138" data-linenumber="9">
+          <span class="hits">138</span>
           
           <code class="ruby">    if first_name || last_name</code>
         </li>
       
-        <li class="covered" data-hits="139" data-linenumber="10">
-          <span class="hits">139</span>
+        <li class="covered" data-hits="137" data-linenumber="10">
+          <span class="hits">137</span>
           
           <code class="ruby">      &quot;#{first_name} #{last_name}&quot;</code>
         </li>
@@ -2344,8 +2344,8 @@
           <code class="ruby">  def student_full_name</code>
         </li>
       
-        <li class="covered" data-hits="108" data-linenumber="5">
-          <span class="hits">108</span>
+        <li class="covered" data-hits="106" data-linenumber="5">
+          <span class="hits">106</span>
           
           <code class="ruby">    object.student.full_name</code>
         </li>
@@ -2362,8 +2362,8 @@
           <code class="ruby">  def student_email</code>
         </li>
       
-        <li class="covered" data-hits="108" data-linenumber="8">
-          <span class="hits">108</span>
+        <li class="covered" data-hits="106" data-linenumber="8">
+          <span class="hits">106</span>
           
           <code class="ruby">    object.student.email</code>
         </li>
@@ -2380,8 +2380,8 @@
           <code class="ruby">  def student_id</code>
         </li>
       
-        <li class="covered" data-hits="108" data-linenumber="11">
-          <span class="hits">108</span>
+        <li class="covered" data-hits="106" data-linenumber="11">
+          <span class="hits">106</span>
           
           <code class="ruby">    object.student.id</code>
         </li>
@@ -2398,8 +2398,8 @@
           <code class="ruby">  def student_first_name</code>
         </li>
       
-        <li class="covered" data-hits="108" data-linenumber="14">
-          <span class="hits">108</span>
+        <li class="covered" data-hits="106" data-linenumber="14">
+          <span class="hits">106</span>
           
           <code class="ruby">    object.student.first_name</code>
         </li>
@@ -6385,7 +6385,7 @@
         <li class="covered" data-hits="1" data-linenumber="31">
           <span class="hits">1</span>
           
-          <code class="ruby">        expect(page).to have_text /Your pending help requests/i</code>
+          <code class="ruby">        expect(page).to have_text /Your Jedi Dashboard/i</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="32">

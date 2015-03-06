@@ -20,7 +20,7 @@ var NewHrForm = React.createClass({
     return (
       <div className="form" >
         <form onSubmit={this.addNewHr}>
-          <input type="text" placeholder="What woud you like help with?"
+          <input type="text" placeholder="What would you like help with?"
                  id="description"
                  ref="newHr"
                  value={this.state.text}

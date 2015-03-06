@@ -76,11 +76,11 @@ var TaHrIndexPage = React.createClass({
       loginButton = <button className="online" onClick={this.goOnline} > Go Online </button>;
     }     
     return (
-      <div>
+      <div className="all-ta-content">
         <div className="ta-panel">
         <img className="ta-panel-avatar" src= { taGravatarLink } > </img>
         <h1 className="ta-index-title">Hello {this.props.ta.first_name}</h1>
-        <h2> Your pending help requests </h2> 
+        <h2> Your Jedi Dashboard </h2> 
         { loginButton }
         </div>
         <TaHrList hrs={this.state.hrs} completeHrs={this.state.completeHrs} />

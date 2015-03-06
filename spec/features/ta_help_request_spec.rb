@@ -28,7 +28,7 @@ RSpec.feature "TaHelpRequests", type: :feature, js: true do
       let!(:hr)   { create(:help_request, student: student, ta_user: ta) }
     
       it "displays the main title" do
-        expect(page).to have_text /Your pending help requests/i
+        expect(page).to have_text /Your Jedi Dashboard/i
       end
       
       it "displays hr's desc" do
