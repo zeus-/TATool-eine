@@ -9,6 +9,11 @@ Capybara.javascript_driver = :poltergeist
 # Add additional requires below this line. Rails is not loaded until this point!
 require 'database_cleaner'
 require 'simplecov'
+
+Capybara.register_driver :poltergeist do |app|
+  Capybara::Poltergeist::Driver.new(app, timeout: 60, phantomjs_options: ['--proxy-type=socks5', '--proxy=0.0.0.0:0'])
+end
+
 SimpleCov.start
 
 # Requires supporting ruby files with custom matchers and macros, etc, in

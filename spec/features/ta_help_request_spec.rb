@@ -49,7 +49,7 @@ RSpec.feature "TaHelpRequests", type: :feature, js: true do
     end
   end
   
-  describe "marking a hr as done"
+  describe "marking a hr as done" do
     let(:student) { create(:student) }
     let(:ta) { create(:ta_user, is_available: true) }
     let!(:hr) { create(:help_request, ta_user: ta, student: student) }
@@ -68,5 +68,5 @@ RSpec.feature "TaHelpRequests", type: :feature, js: true do
         visit home_index_path   
         expect(hr_1.reload.is_complete).to eq(false)
       end
-
+  end
 end
