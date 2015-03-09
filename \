@@ -3,8 +3,7 @@ var StudentHrList = React.createClass({
   getInitialState: function() {
     return {
       tas: this.props.tas,
-      description: "",
-      showInput: false
+      description: ""
     }
   },
 
@@ -22,14 +21,9 @@ var StudentHrList = React.createClass({
     })
   },
 
-  openInput: function(i) {             
-  /* var elem = (this.refs.x.getDOMNode())
-    elem.outerHTML = "<input id='xx' refs='xxx'> </input>";
-    var input = document.getElementById("xx")
-    input.value = studentHrs.description;
-    input.onSubmit */
-    console.log(i)           
-   this.setState({ showInput: true }); 
+  openInput: function() {             
+  var elem = (this.refs.x.getDOMNode())
+    $(elem).html("<input> </input>");
   },
 
   render: function() {
@@ -51,16 +45,13 @@ var StudentHrList = React.createClass({
           <div key={number} className="student-hr">
             <div className="student-hr-content">
               <img src={studentGravatarLink} />
-              <p>  
-              { self.state.showInput ? <EditInputField hrs= {studentHrs} /> : "I need help with " +  self.state.description  } 
-              </p>
+              <p ref="x"> I need help with {self.state.description} </p>
               <h5> -Asked by: {studentHrs.student_full_name} </h5>
               <button id="trash" onClick= {self.deleteHr.bind(self, studentHrs)} >
                 <i className="fa fa-trash fa-lg"></i> 
               </button>
-              <span className="edit" onClick= {self.openInput.bind(self, number)}>
-
-               <i className="fa fa-pencil fa-lg"></i> 
+              <span className="edit" onClick= {self.openInput}>
+                <i className="fa fa-pencil fa-lg"></i> 
               </span>
 
             </div>
@@ -79,7 +70,6 @@ var StudentHrList = React.createClass({
         </div>
       )
     });
-  
     return (
       <div>
         {allItems}

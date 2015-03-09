@@ -49,7 +49,7 @@ class HelpRequestsController < ApplicationController
     
     def find_hr
     @help_request = current_user.help_requests.find_by_id(params[:id])
-    redirect_to root_path, alert: "Access denied, foo" unless @help_request
+    redirect_to root_path unless @help_request
     end
     
     def find_available_tas    
