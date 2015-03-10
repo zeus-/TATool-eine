@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   def authenticate_student!
     unless student_signed_in?
-      redirect_to login_as_student_path, alert: "Please sign in young padawn"
+      redirect_to login_as_student_path
     end
   end
 

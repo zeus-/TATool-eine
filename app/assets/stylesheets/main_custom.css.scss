@@ -57,6 +57,9 @@ body {
 }
 
 .student-index-title {
+ @media screen and (max-width: 680px) {
+    display: none;
+    } 
  margin-top: -1px;
  color: #3480c7;
  font-size: 2.9em;
@@ -73,6 +76,9 @@ body {
   padding-bottom: 50px;
   border-bottom: 4px solid #aaa;
   img {
+  @media screen and (max-width: 580px) {
+    display: none;
+    }
     position: absolute;
     width: 145px;
     top: 7px;
@@ -136,7 +142,7 @@ body {
   margin-top: 28px;
   padding-bottom: 50px;
   border-bottom: 1px dashed #aaa;
-  img {
+  img { 
     position: absolute;
     /* width: 0px; */
     top: -5px;
@@ -145,6 +151,9 @@ body {
   }
  
   .student-description {
+    @media screen and (max-width: 520px) {
+    width: 200px;
+    }
     top: -9px;
     position: relative;
     left: 100px;
@@ -382,10 +391,5 @@ nav {
  }
 }
 
-.all-items {
-  max-width: 500px !important ;
-  background-color: yellow;
-  display: block; 
-  
-}
+
 

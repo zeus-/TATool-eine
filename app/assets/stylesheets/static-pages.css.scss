@@ -1,0 +1,34 @@
+.choose-path {
+
+  position: relative;
+  background: url("http://www.bestlookspa.com/wp-content/uploads/2014/09/elegant-grey-illumination-background-presentations-powerpoint-backgrounds1.jpg");
+  background-size: 1400px 500px;
+  background-repeat: no-repeat;
+  height: 500px; 
+  .btn.btn-warning {
+    padding-top: 37px;
+    width: 400px;
+    height: 100px;
+    margin-top: 75px;
+    background: black;
+    font-size: 17px;
+    margin-left: 32%;
+    @media screen and (max-width: 600px) {
+          margin-left: 75px;
+      }
+    }
+  .btn.btn-info {
+    padding-top: 37px;
+    width: 400px;
+    height: 100px; 
+    margin-top: 29px;
+    background: black;
+    font-size: 17px;
+    right: 100px;
+    margin-left: 32%;
+     @media screen and (max-width: 600px) {
+          margin-left: 75px;
+      }
+  }
+
+}

@@ -9,15 +9,15 @@
     #wrap
       %nav.navbar.navbar-inverse
         .container
-          %button.navbar-toggle.collapsed{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "c\r\n ollapse", :type => "button"}
-            %span.sr-only Toggle navigation
+          %button.navbar-toggle.collapsed{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button", "aria-expanded" => "true"}
+            %span.sr-only 
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
           %a.navbar-brand{:href => "#"} 
             =image_tag("logo.jpg") 
           .pull-right
-            .collapse.navbar-collapse{:id => "bs-example-navbar-collapse-1"}
+            .collapse.navbar-collapse{:id => "bs-example-navbar-collapse-1", "aria-expanded" => "true"}
               %ul.nav.navbar-nav
                 - if student_signed_in?
                   %li.greeting-1
