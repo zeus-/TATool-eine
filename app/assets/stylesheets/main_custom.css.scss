@@ -133,8 +133,8 @@ body {
 }
 .student-hr-content {
   position: relative;
-  margin-top: 35px;
-  padding-bottom: 96px;
+  margin-top: 28px;
+  padding-bottom: 50px;
   border-bottom: 1px dashed #aaa;
   img {
     position: absolute;
@@ -144,18 +144,61 @@ body {
     border: 1px solid #aaa;
   }
  
-  p {
-    padding-top: 0px;
-    position: absolute;
+  .student-description {
+    top: -9px;
+    position: relative;
     left: 100px;
     font-size: 18.5px;
+    max-width: 380px;
   }
-  
   h5 {
-    padding-top: 20px;
-    position: absolute;
+    padding-top: 0px;
+    position: relative;
+    top: -17px;
     left: 100px;
     font-size: 15px;
+  }
+  .edit { 
+      position: absolute;
+      top: -2px;
+      right: 26px;
+      background: #333333;
+      border: 0px;
+      color: #aaa;
+      &:hover {
+          color: rgba(242,216,106,0.9);
+        }
+      }
+    .edit-in-place-icon { 
+      position: absolute;
+      top: -14px;
+      right: 26px;
+      background: #333333;
+      border: 0px;
+      color: #fff;
+      font-size: 2em;
+      }
+
+  .edit-input {
+   margin-bottom: -5px;
+   input {
+      width: 290px;
+      height: 29px;
+      font-size: 18.5px;
+      color: #4C6D8B;
+      border: 3px solid #29669F;
+      margin-top: 6px;
+        }
+    .edit-submit-button {
+      background: #29669F;
+      margin-top: 7px;
+      border: 1px solid #29669F;
+      padding-left: 3px;
+      color: #fff;
+      font-size: 14px;
+      height: 26px;
+      width: 140px;
+    }
   }
 
   button { 
@@ -169,19 +212,7 @@ body {
         color: rgba(255,255,255,0.9);
       }
    }
-   .edit { 
-    position: absolute;
-    top: -3px;
-    right: 25px;
-    background: #333333;
-    border: 0px;
-    color: #aaa;
-    &:hover {
-        color: rgba(242,216,106,0.9);
-      }
-
-   }
-
+  
  }
 .all-ta-content {
   border: 2px solid #aaa;
@@ -350,9 +381,11 @@ nav {
  padding: -20px;
  }
 }
-#xx {
-margin-left: 100px;
-width: 200px;
-color: black;
+
+.all-items {
+  max-width: 500px !important ;
+  background-color: yellow;
+  display: block; 
+  
 }
 
