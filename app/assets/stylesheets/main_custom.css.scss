@@ -49,6 +49,18 @@ body {
   line-height: 52.7px;
 }
 
+nav {
+ img {
+ position:relative;
+ left: 7px;
+ top: -22px;
+ width: 380px;
+ height: 47px;
+ padding: -20px;
+ }
+}
+
+
 /* Tatool-eine styles */
 
 #wrap {
@@ -380,16 +392,5 @@ body {
   }
 
 }
-nav {
- img {
- position:relative;
- left: 7px;
- top: -22px;
- width: 380px;
- height: 47px;
- padding: -20px;
- }
-}
-
 
 

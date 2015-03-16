@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
 
+  layout 'external'
   def new_student
     @user = Student.new
   end

@@ -1,23 +1,47 @@
 !!!
 %html
   %head
-    %title Apollo
+    %title TATool-eine
     = stylesheet_link_tag 'external', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    .container
-      = link_to "Login", questions_path
-      - if user_signed_in?
-        Hello #{current_user.first_name},
-        \#{link_to "Sign Out", destroy_user_session_path, method: :delete}
-      - else
-        = link_to "Sign In", new_user_session_path
-      %hr/
-      = flash[:notice] || flash[:alert]
-      %hr/
-  #footer
-    .container
-      %p.text-muted
-        The Apollo project courtesy of 
-          %a{:href => "http://www.codecore.ca"} The Alumni
+    #wrap
+      %nav.navbar.navbar-inverse
+        .container
+          %button.navbar-toggle.collapsed{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button", "aria-expanded" => "true"}
+            %span.sr-only 
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand{:href => "#"} 
+            =image_tag("logo.jpg") 
+          .pull-right
+            .collapse.navbar-collapse{:id => "bs-example-navbar-collapse-1", "aria-expanded" => "true"}
+              %ul.nav.navbar-nav
+                - if student_signed_in?
+                  %li.greeting-1
+                    \ Hello apprentice
+                    \#{current_user.first_name if current_user.first_name}
+                  %li= link_to "Sign Out", sessions_path, method: :delete
+                -elsif ta_signed_in?
+                  %li.greeting-1
+                    \ Hey there Jedi Master
+                    \#{current_user.first_name if current_user.first_name}
+                  %li= link_to "Sign Out", destroy_ta_sessions_path, method: :delete
+                - else
+                  %li= link_to "Student Login", login_as_student_path 
+                  %li= link_to "Jedi Login ", login_as_ta_path 
+                  %li= link_to "Sign Up", new_home_path
+      .container   
+        - if flash[:notice]
+          .alert.alert-success= flash[:notice]
+        - elsif flash[:alert]
+          .alert.alert-danger= flash[:alert]
+        = yield
+    #footer
+      .container
+        .text-muted
+          %p
+            The Apollo project courtesy of 
+            %a{:href => "http://www.codecore.ca"} The Alumni

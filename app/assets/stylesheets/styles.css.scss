@@ -1,24 +1,128 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import url("//fonts.googleapis.com/css?family=Raleway");
 
+$brand-primary: #000;
+$border-radius-base: 0px;
+$font-family-sans-serif: "Raleway";
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+.row {
+  margin-left:0px;
+  margin-right:0px;
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by its height */
+  margin: 0 auto -35px;
+  /* Pad bottom by footer height */
+  padding: 0 0 15px;
+}
+
+/* Set the fixed height of the footer here */
+#footer {
+  height: 15px;
+  background-color: rgba(100,100,100,0.9);
+  margin-top: 0px;
+  padding-top: 7px;
+  padding-bottom: 20px;
+  p {
+    color: #fff;
+    a {
+    color: #fff;
+    
+    }
+  }
+}
+.greeting-1 {
+  color: #fff; 
+  line-height: 52.7px;
+}
+nav {
+ img {
+ position:relative;
+ left: 7px;
+ top: -22px;
+ width: 380px;
+ height: 47px;
+ padding: -20px;
+ }
+}
+
+// static-pages wrap
+.cutoff-container{
+  max-height: 600px;
+  //background-color: yellow;
+  overflow: hidden;
+}
 $primary-color: #F5f5f5;
 
 .logo {
   color: $primary-color;
 }
+#wrap{
+  background-image: image-url("purple-nebula.jpg")
+}
+.landed-h1 {
+  font-size: 40px;
+  color: #fff;
+  margin-left: 1%;
+  margin-top: 10px;
+}
+.login-section {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 73%;
+  margin-right: 0px;
 
-.header {
-  background-color: $primary-color;
-  .subheader {
-    font-size: 10px;
-  }
+  position: relative;
+  .login-form {
+    width: 255px;
+    color: #fff;
+    margin-top: -42px;
+    }
+}
+.padawan-greeting {
+  margin-top: -133px;
+  margin-bottom: 97px;
+  margin-left: 2%;
+  margin-right: 0px;
+  color: #fff;
+  font-size: 19px;
 }
 
 
-// .header .subheader {
-//   font-size: 10px;
-// }
+.tatooeine {
+  margin-left: -65px;
+  width: 1265px;
+  height: 633px;
+  max-height: 500px;
+  //background-color: yellow;
+  overflow: hidden;
+  background: image-url("rsz_mercury.jpg");
+  -webkit-border-radius: 600px 600px 0 0;
+  background-size: 900px;
+  box-shadow: inset 10px 10px 40px 10px black, inset -3px 0 6px 2px rgba(255, 255, 255, 0.2); 
+  -webkit-animation-name: tatooeine-rotate;
+  -webkit-animation-duration: 13s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+}
 
-// <div class="header">
-//   <div class="subheader">
-//   </div>
-// </div>
+@-webkit-keyframes tatooeine-rotate {
+  from { background-position-x: 0px; background-position-y: 0px; }
+  to { background-position-x: 900px; background-position-y: 900px; }
+}
+
+
