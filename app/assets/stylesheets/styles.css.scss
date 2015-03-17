@@ -71,10 +71,13 @@ $primary-color: #F5f5f5;
   background-image: image-url("purple-nebula.jpg")
 }
 .landed-h1 {
-  font-size: 40px;
+  font-size: 32px;
   color: #fff;
-  margin-left: 1%;
+  margin-left: 2%;
   margin-top: 10px;
+  @media screen and (max-width: 1000px) {
+    display:none;
+  }
 }
 .login-section {
   margin-top: 0px;
@@ -90,44 +93,60 @@ $primary-color: #F5f5f5;
 .login-section .login-form {
   -webkit-transform: scale(0.9, 0.9);
     transform: scale(0.9, 0.9);
+  @media screen and (max-width: 1000px) {
+    margin-top: 10%;
+    margin-left: -39%;
+  }
   }
 .padawan-greeting {
-  margin-top: -133px;
+  margin-top: -124px;
   margin-bottom: 97px;
-  margin-left: 2%;
+  margin-left: 3%;
   margin-right: 0px;
   color: #fff;
-  font-size: 19px;
+  font-size: 18px;
+  @media screen and (max-width: 1000px) {
+    margin-top: -162px;
+    width: 56%;
+    font-size: 22px;
+    font-weight: bold;
+  }
 }
 
 .cutoff-container{
-  max-height: 500px;
+  max-height: 475px;
   //background-color: yellow;
   overflow: hidden;
-  width: 119%;
-  margin-left: 0px;
+  width: 100%;
+  margin-left: 8%;
   @media screen and (max-width: 1000px) {
-    margin-left: 0px;
-    width: 100%;
+    margin-left: -15%;
+    width: 150%;
     max-height: 600px;
   }
 
   @media screen and (min-width:1100px) and (max-width:1200px) {
-    margin-left: -240px;
-    width: 136%;
+    margin-left: 7%;
+    //width: 136%;
     max-height: 600px;
   }
   @media screen and (min-width: 1300px) {
     //margin-left: -150px;
-    margin-left: 0px;
+    margin-left: 8%;
     //width: 130%;
-    max-height: 600px;
+    max-height: 475px;
+  }
+  @media screen and (min-width: 1400px) {
+    //margin-left: -150px;
+    margin-left: 8%;
+    //width: 130%;
+    max-height: 675px;
   }
 }
 
 .tatooeine {
-  width: 1135px;
-  height: 1135px;
+  width: 900px;
+  height: 900px;
   overflow: hidden;
   background: image-url("http://fc07.deviantart.net/fs71/i/2013/146/b/e/desert_planet_texture_by_jakerobson_tull-d66mfnr.jpg");
   -webkit-border-radius: 50%;
