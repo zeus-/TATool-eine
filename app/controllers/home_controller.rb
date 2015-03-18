@@ -3,7 +3,7 @@ class HomeController < ApplicationController
   before_action :authenticate_student!, only: :student_index
   
   def new
-
+    render :layout => 'external'
   end
 
   def index
