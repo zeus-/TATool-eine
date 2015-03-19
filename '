@@ -26,7 +26,7 @@ body {
   /* Negative indent footer by its height */
   margin: 0 auto -29px;
   /* Pad bottom by footer height */
-  padding: 0 0 60px;
+  padding: 0 0 0px;
 }
 
 /* Set the fixed height of the footer here */
@@ -71,7 +71,7 @@ $medium-violet: #bdb6c6;
 $dark-violet: #4a326c;
 
 #wrap {
-  //color: #b2b2b2;
+  color: #b2b2b2;
   //background: black;
   background-image: image-url("Optimized-purple-nebula.jpg");
 }
@@ -92,48 +92,15 @@ $dark-violet: #4a326c;
 }
 .entire-section {
 
-  border: 1px solid $light-violet;
+  border: 2px solid $light-violet;
   background: rgba(0, 0, 0, 0.5); 
   padding-bottom: 30px;
   color: #fff;
 }
-
-.entire-section {
-@media screen and (min-width: 1200px) {
-
-  margin-left: 15px;
-  width: 536px !important;
-} 
-@media screen and (min-width: 1000px) and (max-width : 1200px) {
-
-  margin-left: 15px;
-  width: 455px !important;
-}
-
-@media screen and (min-width: 1000px) and (max-width : 979px) {
-
-  width: 1000px !important;
-}
-
-@media  screen and (min-width: 480px) and (max-width : 767px) {
-
-  width: 600px !important;
-}
-
-@media  screen and (min-width: 320px) and (max-width : 480px) {
-
-  width: 360px !important;
-}
-
-@media  screen and (min-width: 0px) and (max-width : 320px) {
-  width: 200px !important;
-}
-}
-
 .student-header {
 
   position: relative;
-  padding-left: 1px;
+  padding-left: 10px;
   padding-right: 10px;
   padding-top: 10px;
   padding-bottom: 50px;
@@ -144,9 +111,9 @@ $dark-violet: #4a326c;
     display: none;
     }
     position: absolute;
-    width: 130px;
-    top: 18px;
-    right: 2px;
+    width: 145px;
+    top: 15px;
+    right: 5px;
     border: 2px solid #aaa;
   }
  
@@ -157,7 +124,7 @@ $dark-violet: #4a326c;
 
   h2 {
     padding-top: 5px;
-    font-size: 25px;
+    font-size: 32px;
     padding-bottom: 9px;
 
     a {
@@ -177,11 +144,11 @@ $dark-violet: #4a326c;
        font-size: 16px;
     }
     input {
-      width: 247px;
-      height: 23px;
+      width: 290px;
+      height: 29px;
       font-size: 14px;
       color: $dark-violet;
-      border: 3px solid $medium-violet;
+      border: 3px solid $light-violet;
         }
     button {
       display: inline-block;
@@ -222,7 +189,7 @@ $dark-violet: #4a326c;
     position: relative;
     left: 100px;
     font-size: 18.5px;
-    max-width: 350px;
+    max-width: 380px;
   }
   h5 {
     padding-top: 0px;
@@ -241,9 +208,6 @@ $dark-violet: #4a326c;
       &:hover {
           color: rgba(242,216,106,0.9);
         }
-       @media screen and (max-width: 481px) {
-        top: 85px;    
-        }
       }
     .edit-in-place-icon { 
       position: absolute;
@@ -253,9 +217,6 @@ $dark-violet: #4a326c;
       border: 0px;
       color: #fff;
       font-size: 2em;
-      @media screen and (max-width: 481px) {
-        top: 75px;    
-        }
       }
 
   .edit-input {
@@ -267,14 +228,11 @@ $dark-violet: #4a326c;
       color: #4C6D8B;
       border: 3px solid #29669F;
       margin-top: 6px;
-      @media screen and (max-width: 481px) {
-      width: 180px;    
         }
-      }
     .edit-submit-button {
-      background: $dark-violet;
+      background: #29669F;
       margin-top: 7px;
-      border: 1px solid $dark-violet;
+      border: 1px solid #29669F;
       padding-left: 3px;
       color: #fff;
       font-size: 14px;
@@ -293,18 +251,12 @@ $dark-violet: #4a326c;
     &:hover {
         color: rgba(255,255,255,0.9);
       }
-    @media screen and (max-width: 481px) {
-        top: 82px;    
-      }
    }
   
  }
 .all-ta-content {
+  border: 2px solid #aaa;
   padding-bottom: 300px;
-  border: 1px solid $light-violet;
-  background: rgba(0, 0, 0, 0.5); 
-  color: #fff;
-
  }
 .ta-hr-content {
   position: relative;
@@ -323,40 +275,32 @@ $dark-violet: #4a326c;
  
   p {
     padding-top: 0px;
-    position: relative;
-    top: -12px;
+    position: absolute;
     left: 100px;
     font-size: 18.5px;
-    max-width: 60%;
   }
   
   h5 {
-    position: relative;
-    top: -16px;
+    padding-top: 20px;
+    position: absolute;
     left: 100px;
     font-size: 15px;
   }
 
   .checkbox { 
     position: absolute;
-    top: -23px;
+    top: -10px;
     right: 0px;
-    background: rgba(0, 0, 0, 0.5); 
+    background: #333333;
     border: 0px;
     color: #aaa;
-    @media screen and (max-width: 520px) {
-      left: 45px;
-      top: 82px;
-      }
+    
     .done { 
       margin-top: 5px;
       font-size: 15px;
-      background: rgba(0, 0, 0, 0.5); 
+      background: #333333;
       border: 0px;
       color: #aaa;
-       @media screen and (max-width: 520px) {
-        display: none;  
-        }
      }
    }
    .checkbox:hover {
@@ -367,7 +311,7 @@ $dark-violet: #4a326c;
 .completed-hrs {
   h1 {
    font-size: 2em;
-   color: $medium-violet;
+   color: #5c99d2;
    padding-bottom: 12px;
    margin-left: -30px;
    margin-top: 40px;
@@ -399,14 +343,14 @@ $dark-violet: #4a326c;
     position: absolute;
     top: 16px;
     right: 2px;
-    background: rgba(0, 0, 0, 0.5); 
+    background: #333333;
     border: 0px;
     color: #aaa;
     font-style: italic; 
     .done { 
       margin-top: 5px;
       font-size: 15px;
-      background: rgba(0, 0, 0, 0.5); 
+      background: #333333;
       border: 0px;
       color: #aaa;
      }
@@ -421,22 +365,21 @@ $dark-violet: #4a326c;
   margin-left: 0px;
   position: relative;
   padding-top: 5px;
+  //padding-left: 7px;
   padding-bottom: 47px;
+  //border: 1px solid #aaa;
   border-bottom: 2px solid #aaa;
-  background: url("purple-decorative-vector-pattern.jpg");
+  background: url("http://impiousdigest.com/wp-content/uploads/simple-one-color-grey-background-1920x12002.jpg");
   .ta-panel-avatar {
     position: absolute;
     width: 145px;
     top: 16px;
     right: 11px;
     border: 2px solid #aaa;
-    @media screen and (max-width: 481px) {
-      display: none;    
-        }
   }
  
   h1 {
-    color: $medium-violet;
+    color: #3480c7;
     font-size: 2.9em;
     letter-spacing: 2px;
     margin-top: 5px;
@@ -445,7 +388,7 @@ $dark-violet: #4a326c;
   }
   h2 {
    font-size: 2em;
-   color: $medium-violet;
+   color: #5c99d2;
    margin-top: -12px;
    padding-bottom: 0px;
    margin-left: 14px;

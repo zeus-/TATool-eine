@@ -88,7 +88,7 @@ RSpec.feature "HelpRequests", type: :feature do
       before { visit root_path }
       it "redirects back to login" do
         expect(current_path).to eq(login_as_student_path)
-        expect(page).to have_text /Log in my young padawan/i
+        expect(page).to have_text /log in young padawan/i
     end
   end
 

@@ -76,7 +76,7 @@ var TaHrIndexPage = React.createClass({
       loginButton = <button className="online" onClick={this.goOnline} > Go Online </button>;
     }     
     return (
-      <div className="all-ta-content">
+      <div className="all-ta-content col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <div className="ta-panel">
         <img className="ta-panel-avatar" src= { taGravatarLink } > </img>
         <h1 className="ta-index-title">Hello {this.props.ta.first_name}</h1>

@@ -48,7 +48,7 @@ var StudentHrList = React.createClass({
       })
       
       allItems.push(
-        <div key= { i } className="top col-xs-12 col-sm-12 col-md-12 col-lg-6">
+        <div key= { i } className="top col-xs-12 col-sm-12 col-md-12 col-lg-6 entire-section">
           <div className="student-header"> 
             <img src= { taGravatarLink } > </img>
             <h2> Help Requests for  {taObject.first_name} </h2>
