@@ -317,4 +317,47 @@ $primary-color: #F5f5f5;
   }
 
 }
- 
+
+.dagobah {
+  @extend .tatooeine;
+  background: image-url("dagobah.png");
+  background-size: 900px;
+  @-webkit-keyframes tatooeine-rotate {
+  from { background-position-x: 0px; background-position-y: 0px; }
+  to { background-position-x: 900px; background-position-y: 900px; }
+}
+}
+
+.jedi-greeting {
+  @extend .padawan-greeting;
+  margin-left: 2.2%;
+}
+.student-quote {
+  @extend .jedi-greeting;
+  margin-top: -95px;
+  font-size: 15px;
+  font-style: italic;
+}
+//sign up pages
+.new-user-section  {
+ width: 700px;
+ margin-left: auto;
+ margin-right: auto;
+ color: #fff;
+ form {
+  input {
+    width: 90%;
+  }
+  .btn {
+    border: 1px solid #fff;
+    -o-transition:color .2s ease-out, background 1s ease-in;
+    -ms-transition:color .2s ease-out, background 1s ease-in;
+    -moz-transition:color .2s ease-out, background 1s ease-in;
+    -webkit-transition:color .2s ease-out, background 1s ease-in;
+    /* ...and now override with proper CSS property */
+    transition:color .2s ease-out, background 1s ease-in;
+    &:hover { color:#fff; background: #3480c7; }
+  }
+  
+ }
+}

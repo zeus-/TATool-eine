@@ -1,5 +1,14 @@
-%h1 Sign In as a Jedi
-= simple_form_for TaUser.new , url: sessions_path do |f| 
-  = f.input :email
-  = f.input :password
-  = f.submit "Sign In", class: "btn btn-primary" 
+.landed-h1 Welcome to planet Dagobah
+.login-section
+  .login-form
+    = simple_form_for TaUser.new , url: sessions_path do |f| 
+      = f.input :email
+      = f.input :password
+      = f.submit "Sign In", class: "btn btn-primary" 
+.jedi-greeting 
+  Your padawans are waiting. Please login as a Jedi ( Teaching Assistant ). 
+.student-quote
+  "Help me TA. You're my only hope!" -Codecore Student
+.cutoff-container
+  .dagobah
+

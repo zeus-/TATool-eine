@@ -1,4 +1,6 @@
 class StudentsController < ApplicationController
+
+  layout 'external'
   def new
     @student = Student.new
   end

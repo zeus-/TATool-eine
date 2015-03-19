@@ -1,8 +1,9 @@
-%h1 Sign up as a Jedi Master/ TA 
-= simple_form_for @ta_user do |f| 
-  = f.input :first_name
-  = f.input :last_name
-  = f.input :email
-  = f.input :password
-  = f.input :password_confirmation
-  = f.submit "Sign Up", class: "btn btn-primary"
+.new-user-section
+  %h1 Sign up as a Jedi Master/ TA 
+  = simple_form_for @ta_user do |f| 
+    = f.input :first_name
+    = f.input :last_name
+    = f.input :email
+    = f.input :password
+    = f.input :password_confirmation
+    = f.submit "Sign Up", class: "btn btn-primary"

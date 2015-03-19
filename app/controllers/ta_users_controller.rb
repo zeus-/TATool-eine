@@ -1,4 +1,6 @@
 class TaUsersController < ApplicationController
+
+  layout 'external'
   def new
     @ta_user = TaUser.new
   end

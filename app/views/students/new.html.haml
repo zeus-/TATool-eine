@@ -1,8 +1,9 @@
-%h1 Sign up my young Padawan/ student
-= simple_form_for @student do |f| 
-  = f.input :first_name
-  = f.input :last_name
-  = f.input :email
-  = f.input :password
-  = f.input :password_confirmation
-  = f.submit "Sign Up", class: "btn btn-primary"
+.new-user-section
+  %h1 Sign up my young Padawan/ student
+  = simple_form_for @student do |f| 
+    = f.input :first_name
+    = f.input :last_name
+    = f.input :email
+    = f.input :password
+    = f.input :password_confirmation
+    = f.submit "Sign Up", class: "btn btn-primary"
