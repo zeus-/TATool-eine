@@ -53,24 +53,35 @@ body {
 nav {
  img {
  position:relative;
- left: 7px;
+ left: 15px;
  top: -22px;
- width: 380px;
- height: 47px;
+ width: 188px;
+ height: 46px;
  padding: -20px;
  }
 }
 
-// static-pages wrap
+// static-pages styles
 
 $primary-color: #F5f5f5;
+
+@mixin transform($x, $y, $a, $b) {
+  -webkit-transform: scale($x, $y) translate($a, $b);
+  -moz-transform: scale($x, $y) translate($a, $b);
+  -ms-transform: scale($x, $y) translate($a, $b);
+  -o-transform: scale($x, $y) translate($a, $b);
+  -transform: scale($x, $y) translate($a, $b);
+
+}
 
 .logo {
   color: $primary-color;
 }
+
 #wrap{
   background-image: image-url("Optimized-purple-nebula.jpg")
 }
+
 .landed-h1 {
   font-size: 32px;
   color: #fff;
@@ -80,6 +91,7 @@ $primary-color: #F5f5f5;
     display:none;
   }
 }
+
 .login-section {
   margin-top: 0px;
   margin-bottom: 0px;
@@ -91,9 +103,9 @@ $primary-color: #F5f5f5;
     margin-top: -50px;
     }
 }
+
 .login-section .login-form {
-  -webkit-transform: scale(0.9, 0.9);
-    transform: scale(0.9, 0.9);
+@include transform(0.9, 0.9, 0, 0);  
   @media screen and (max-width: 1000px) {
     margin-top: 10%;
     margin-left: -39%;
@@ -127,166 +139,193 @@ $primary-color: #F5f5f5;
   overflow: hidden;
   background: image-url("desert_planet_texture_2.jpg");
   -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
   background-size: 900px;
-  //box-shadow: inset 10px 10px 40px 10px black, inset -3px 0 6px 2px rgba(255, 255, 255, 0.2); 
   box-shadow: inset 10px 10px 40px 10px rgb(0, 0, 0),
     inset -3px 0 6px 2px rgba(255, 255, 255, 0.2);
+  
   -webkit-animation-name: tatooeine-rotate;
+  -moz-animation-name: tatooeine-rotate;
+  -o-animation-name: tatooeine-rotate;
+  animation: tatooeine-rotate;
+  
   -webkit-animation-duration: 13s;
+  -moz-animation-duration: 13s;
+  -o-animation-duration: 13s;
+  animation-duration: 13s;
+
   -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+
   -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  -o-animation-timing-function: linear;
+  animation-timing-function: linear;
 }
 
 @-webkit-keyframes tatooeine-rotate {
   from { background-position-x: 0px; background-position-y: 0px; }
   to { background-position-x: 900px; background-position-y: 900px; }
 }
+@-moz-keyframes tatooeine-rotate {
+  0% { background-position-x: 0px; background-position-y: 0px; }
+  100% { background-position-x: 900px; background-position-y: 900px; }
+} 
 
- @media screen and (min-width:0px) and (max-width:450px) {
+@-o-keyframes tatooeine-rotate {
+  0% { background-position-x: 0px; background-position-y: 0px; }
+  100% { background-position-x: 900px; background-position-y: 900px; }
+}
+@keyframes tatooeine-rotate {
+  0% { background-position-x: 0px; background-position-y: 0px; }
+  100% { background-position-x: 900px; background-position-y: 900px; }
+}
 
-  .cutoff-container{
-    margin-left: 0%;
-    width: 100%;
-    max-height: 600px;
-    }
-  .tatooeine {
-    height: 350px; 
-    width: 350px;
-    margin-left: 5px;
-    }
-  .login-section .login-form {
-    -webkit-transform: scale(0.8, 0.8) translate(-230px,-20px);
-    transform: scale(0.8, 0.8) translate(-230px,-20px);
+@media screen and (min-width:0px) and (max-width:450px) {
 
-    }
-  .padawan-greeting {
-   display: none; 
+ .cutoff-container{
+   margin-left: 0%;
+   width: 100%;
+   max-height: 600px;
    }
-
-   nav img {
-    width: 235px;
-    height: 34px;
-    margin-top: 11px;
+ .tatooeine {
+   height: 350px; 
+   width: 350px;
+   margin-left: 5px;
    }
-  }  
-  
-  @media screen and (min-width:450px) and (max-width:575px) {
-  .cutoff-container{
-    margin-left: 0%;
-    width: 100%;
-    max-height: 600px;
-    }
-  .tatooeine {
-    height: 550px; 
-    width: 550px;
-    }
-  .login-section .login-form {
-    -webkit-transform: scale(0.8, 0.8) translate(-90px,-20px);
-    transform: scale(0.8, 0.8) translate(-90px,-20px);
-
-    }
-  .padawan-greeting {
-    -webkit-transform: scale(0.7, 0.7) translate(-50px,-20px);
-    transform: scale(0.7, 0.7) translate(-50px,-20px);
+ .login-section .login-form {
+   @include transform(0.8, 0.8, -230px, -20px);  
    }
+ .padawan-greeting {
+  display: none; 
   }
 
-  @media screen and (min-width:575px) and (max-width:700px) {
-  .cutoff-container{
-    margin-left: 0%;
-    width: 100%;
-    max-height: 600px;
-    }
-  .tatooeine {
-    height: 650px; 
-    width: 650px;
-    }
+  nav img {
+   width: 133px;
+   height: 35px;
+   margin-top: 9px;
   }
+}  
+ 
+@media screen and (min-width:450px) and (max-width:575px) {
+ .cutoff-container{
+   margin-left: 0%;
+   width: 100%;
+   max-height: 600px;
+   }
+ .tatooeine {
+   height: 550px; 
+   width: 550px;
+  }
+ .login-section .login-form {
+   @include transform(0.8, 0.8, -90px, -20px);  
+  }
+ .padawan-greeting {
+   @include transform(0.7, 0.7, -50px, -20px);  
+  }
+}
 
-  @media screen and (min-width:700px) and (max-width:870px) {
-  .cutoff-container{
-    margin-left: -21px;
-    width: 105%;
-    max-height: 400px;
-    }
-  .tatooeine {
-    height: 750px; 
-    width: 750px;
-    }
+@media screen and (min-width:575px) and (max-width:700px) {
+ .cutoff-container{
+   margin-left: 0%;
+   width: 100%;
+   max-height: 600px;
   }
+ .tatooeine {
+   height: 650px; 
+   width: 650px;
+ }
+}
 
-  @media screen and (min-width:870px) and (max-width:1000px) {
-  .cutoff-container{
-    margin-left: -55px;
-    width: 118%;
-    max-height: 400px;
-    }
-  .tatooeine {
-    height: 850px; 
-    width: 850px;
-    }
-  }
+@media screen and (min-width:700px) and (max-width:870px) {
+ .cutoff-container{
+   margin-left: -21px;
+   width: 105%;
+   max-height: 400px;
+ }
+ .tatooeine {
+   height: 750px; 
+   width: 750px;
+ }
+}
 
-  @media screen and (min-width:1000px) and (max-width:1200px) {
-  .cutoff-container{
-    margin-left: 4%;
-    width: 100%;
-    max-height: 400px;
-    }
-  .tatooeine {
-    height: 900px; 
-    width: 900px;
-    }
+@media screen and (min-width:870px) and (max-width:1000px) {
+ .cutoff-container{
+   margin-left: -55px;
+   width: 118%;
+   max-height: 400px;
+ }
+ .tatooeine {
+   height: 850px; 
+   width: 850px;
   }
-  @media screen and (min-width: 1200px) and (max-width:1275px) {
-  .cutoff-container{
-    margin-left: 9%;
-    width: 94%;
-    max-height: 400px;
-    }
-  .tatooeine {
-    height: 900px; 
-    width: 900px;
-    }
-  }
- @media screen and (min-width: 1275px) and (max-width:1400px) {
-  .cutoff-container{
-    margin-left: 9%;
-    width: 94%;
-    max-height: 520px;
-    }
-  .tatooeine {
-    height: 900px; 
-    width: 900px;
-    }
-  }
+}
 
- @media screen and (min-width: 1400px) and (max-width:1500px)  {
-  .cutoff-container{
-    margin-left: 8%;
-    //width: 130%;
-    max-height: 620px;
-    }
-  .tatooeine {
-    height: 950px; 
-    width: 950px;
-    }
+@media screen and (min-width:1000px) and (max-width:1200px) {
+ .cutoff-container{
+   margin-left: 4%;
+   width: 100%;
+   max-height: 400px;
+ }
+ .tatooeine {
+   height: 900px; 
+   width: 900px;
+ }
+}
+@media screen and (min-width: 1200px) and (max-width:1275px) {
+ .cutoff-container{
+   margin-left: 9%;
+   width: 94%;
+   max-height: 400px;
+ }
+ .tatooeine {
+   height: 900px; 
+   width: 900px;
+ }
+}
+@media screen and (min-width: 1275px) and (max-width:1400px) {
+ .cutoff-container{
+   margin-left: 9%;
+   width: 94%;
+   max-height: 520px;
+ }
+ .tatooeine {
+   height: 900px; 
+   width: 900px;
   }
- @media screen and (min-width: 1500px) {
-  .cutoff-container{
-    margin-left: 8%;
-    //width: 130%;
-    max-height: 850px;
-    }
-  .tatooeine {
-    height: 950px; 
-    width: 950px;
-    }
+}
+
+@media screen and (min-width: 1400px) and (max-width:1500px)  {
+ .cutoff-container{
+   margin-left: 8%;
+   //width: 130%;
+   max-height: 620px;
+ }
+ .tatooeine {
+   height: 950px; 
+   width: 950px;
+ }
+}
+@media screen and (min-width: 1500px) {
+ .cutoff-container{
+   margin-left: 8%;
+   //width: 130%;
+   max-height: 850px;
+ }
+ .tatooeine {
+   height: 950px; 
+   width: 950px;
   }
+}
+
 .choose-path {
 
   position: relative;
-  //background: url("http://www.bestlookspa.com/wp-content/uploads/2014/09/elegant-grey-illumination-background-presentations-powerpoint-backgrounds1.jpg");
   background-size: 1400px 500px;
   background-repeat: no-repeat;
   height: 500px; 
@@ -300,8 +339,8 @@ $primary-color: #F5f5f5;
     margin-left: 32%;
     @media screen and (max-width: 600px) {
           margin-left: 75px;
-      }
     }
+  }
   .btn.btn-info {
     padding-top: 37px;
     width: 400px;
@@ -313,7 +352,7 @@ $primary-color: #F5f5f5;
     margin-left: 32%;
      @media screen and (max-width: 600px) {
           margin-left: 75px;
-      }
+    }
   }
 
 }
@@ -325,7 +364,23 @@ $primary-color: #F5f5f5;
   @-webkit-keyframes tatooeine-rotate {
   from { background-position-x: 0px; background-position-y: 0px; }
   to { background-position-x: 900px; background-position-y: 900px; }
-}
+  }
+  @-moz-keyframes tatooeine-rotate {
+  from { background-position-x: 0px; background-position-y: 0px; }
+  to { background-position-x: 900px; background-position-y: 900px; }
+  }
+  @-o-keyframes tatooeine-rotate {
+  from { background-position-x: 0px; background-position-y: 0px; }
+  to { background-position-x: 900px; background-position-y: 900px; }
+  }
+  @-ms-keyframes tatooeine-rotate {
+  from { background-position-x: 0px; background-position-y: 0px; }
+  to { background-position-x: 900px; background-position-y: 900px; }
+  }
+  @keyframes tatooeine-rotate {
+  from { background-position-x: 0px; background-position-y: 0px; }
+  to { background-position-x: 900px; background-position-y: 900px; }
+  }
 }
 
 .jedi-greeting {

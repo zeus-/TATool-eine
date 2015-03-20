@@ -53,11 +53,17 @@ body {
 nav {
  img {
  position:relative;
- left: 7px;
+ left: 0px;
  top: -22px;
- width: 380px;
- height: 47px;
+ width: 188px;
+ height: 46px;
  padding: -20px;
+
+ @media screen and (min-width:0px) and (max-width:450px) {
+   width: 133px;
+   height: 35px;
+   margin-top: 9px;
+ }
  }
 }
 

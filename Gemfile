@@ -27,6 +27,7 @@ gem 'cancancan', '~> 1.10'
 gem 'active_model_serializers'
 gem 'react-rails', '~> 1.0.0.pre', github: 'reactjs/react-rails'
 gem 'font-awesome-sass'
+# gem 'autoprefixer-rails'
 
 group :test do
   gem 'simplecov', require: false
@@ -52,7 +53,6 @@ group :development, :test do
   gem 'spring'
 end
 
-group :production do 
-  gem 'pg'
+group :production do
   gem 'rails_12factor'
 end
