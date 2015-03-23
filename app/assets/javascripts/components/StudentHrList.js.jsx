@@ -10,17 +10,7 @@ var StudentHrList = React.createClass({
     var self = this;
   },
   
-  deleteHr: function(studentHrs) {
-    $.ajax({
-      url: '/students/' + studentHrs.student_id + '/help_requests/' + studentHrs.id,
-      type: 'DELETE',
-      error: function() {
-       alert('Could not delete!') 
-      }
-    })
-  },
-
-    render: function() {
+  render: function() {
     var allItems = [];
     var self = this;
     var gravatarAddy = "http://www.gravatar.com/avatar/"  
@@ -34,14 +24,13 @@ var StudentHrList = React.createClass({
       taObject.open_help_requests.forEach(function(studentHrs, number) {
         var studentMD5Email = md5(studentHrs.student_email)
         var studentGravatarLink = gravatarAddy + studentMD5Email
+        var hrID = studentHrs.id
         helpRequests.push(
           <div key={number} className="student-hr">
             <div className="student-hr-content">
               <img src={studentGravatarLink} />
               <EditDescription hrs= {studentHrs}/>
-              <button id="trash" onClick= {self.deleteHr.bind(self, studentHrs)} >
-                <i className="fa fa-trash fa-lg"></i> 
-              </button>
+              <DeleteStudentHr hrs= {studentHrs} thisid= {hrID} onDelete={self.props.forceUpdate}  />
             </div>
           </div>
         )
